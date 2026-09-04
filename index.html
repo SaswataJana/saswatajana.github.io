@@ -30,8 +30,8 @@
     background:var(--paper);
     color:var(--ink);
     font-family:var(--sans);
-    font-size:16px;
-    line-height:1.6;
+    font-size:17px;
+    line-height:1.62;
     -webkit-font-smoothing:antialiased;
     text-rendering:optimizeLegibility;
   }
@@ -39,11 +39,11 @@
   a:hover{text-decoration:underline;text-underline-offset:2px;}
 
   .wrap{
-    max-width:1080px;
+    max-width:1140px;
     margin:0 auto;
     display:grid;
-    grid-template-columns:300px 1fr;
-    gap:64px;
+    grid-template-columns:352px 1fr;
+    gap:60px;
     padding:0 40px;
   }
 
@@ -59,8 +59,16 @@
   .mark{
     display:flex;
     align-items:center;
-    gap:14px;
-    margin-bottom:22px;
+    gap:20px;
+    margin-bottom:26px;
+  }
+  .portrait{
+    width:112px;height:112px;
+    flex:none;
+    border-radius:50%;
+    object-fit:cover;
+    display:block;
+    border:1px solid var(--line);
   }
   .avatar{
     width:56px;height:56px;
@@ -73,29 +81,29 @@
     font-size:22px;
     letter-spacing:.5px;
   }
-  .graph-glyph{width:44px;height:44px;color:var(--accent);opacity:.9;}
+  .graph-glyph{width:132px;height:auto;flex:none;color:var(--accent);}
   .name{
     font-family:var(--serif);
     font-weight:500;
-    font-size:30px;
+    font-size:33px;
     line-height:1.1;
     letter-spacing:-.01em;
     margin:0 0 10px;
   }
   .role{
-    font-size:14.5px;
+    font-size:15px;
     color:var(--muted);
     margin:0 0 4px;
   }
   .role strong{color:var(--ink);font-weight:500;}
   .focus{
-    font-size:14.5px;
+    font-size:15px;
     color:var(--muted);
     margin:14px 0 24px;
     padding-top:16px;
     border-top:1px solid var(--line);
   }
-  .contacts{list-style:none;margin:0 0 26px;padding:0;font-size:14.5px;}
+  .contacts{list-style:none;margin:0 0 26px;padding:0;font-size:15px;}
   .contacts li{margin-bottom:7px;display:flex;gap:8px;}
   .contacts .k{color:var(--faint);width:64px;flex:none;}
   .contacts a{word-break:break-word;}
@@ -104,7 +112,7 @@
   nav.toc a{
     display:block;
     color:var(--muted);
-    font-size:14.5px;
+    font-size:15px;
     padding:5px 0 5px 14px;
     border-left:2px solid transparent;
     transition:color .15s ease,border-color .15s ease;
@@ -119,14 +127,14 @@
   h2{
     font-family:var(--serif);
     font-weight:500;
-    font-size:22px;
+    font-size:23.5px;
     letter-spacing:-.01em;
     margin:0 0 20px;
     padding-bottom:10px;
     border-bottom:1px solid var(--line);
   }
   p{margin:0 0 16px;max-width:66ch;}
-  .lead{font-size:17px;}
+  .lead{font-size:18.5px;}
 
   /* Research list */
   .themes{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px;}
@@ -144,7 +152,7 @@
   .pub-group h3{
     font-family:var(--sans);
     font-weight:600;
-    font-size:14px;
+    font-size:14.5px;
     color:var(--muted);
     margin:0 0 4px;
   }
@@ -164,13 +172,13 @@
   }
   .pub .body{min-width:0;}
   .pub .title{
-    font-size:15.5px;
+    font-size:16.5px;
     line-height:1.45;
     color:var(--ink);
     font-weight:500;
   }
   .pub a.title:hover{color:var(--accent);}
-  .pub .authors{font-size:14px;color:var(--muted);margin-top:3px;}
+  .pub .authors{font-size:14.5px;color:var(--muted);margin-top:3px;}
   .pub .authors .me{color:var(--ink);font-weight:500;}
   .pub .venue{font-size:13.5px;color:var(--faint);margin-top:3px;font-style:italic;}
 
@@ -184,7 +192,7 @@
     border-bottom:1px solid var(--line-soft);
   }
   .entry:last-child{border-bottom:none;}
-  .entry .primary{font-size:15.5px;color:var(--ink);}
+  .entry .primary{font-size:16.5px;color:var(--ink);}
   .entry .primary .sub{display:block;font-size:14px;color:var(--muted);margin-top:2px;}
   .entry .when{font-size:13.5px;color:var(--faint);white-space:nowrap;text-align:right;padding-top:2px;}
 
@@ -193,7 +201,7 @@
   .teach-block .head{font-size:14px;font-weight:600;color:var(--muted);margin-bottom:2px;}
 
   .links{margin:0;padding:0;list-style:none;}
-  .links li{padding:11px 0;border-bottom:1px solid var(--line-soft);font-size:15px;}
+  .links li{padding:11px 0;border-bottom:1px solid var(--line-soft);font-size:16px;}
   .links li:last-child{border-bottom:none;}
   .links .note{display:block;font-size:13.5px;color:var(--faint);margin-top:2px;}
 
@@ -236,82 +244,83 @@
   <aside class="side">
     <div class="side-inner fade">
       <div class="mark">
-        <svg class="graph-glyph" viewBox="20 30 124 106" style="width:210px;height:auto" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-  <!-- back triangle edges -->
-  <g stroke-width="1" opacity="0.35">
-    <line x1="74" y1="84" x2="132" y2="96"/>
-    <line x1="132" y1="96" x2="98" y2="40"/>
-    <line x1="98" y1="40" x2="74" y2="84"/>
-  </g>
-  <!-- connector edges -->
-  <g stroke-width="1.1" opacity="0.5">
-    <line x1="34" y1="104" x2="74" y2="84"/>
-    <line x1="92" y1="116" x2="132" y2="96"/>
-  </g>
-  <!-- front triangle edges -->
-  <g stroke-width="1.3" opacity="0.72">
-    <line x1="34" y1="104" x2="92" y2="116"/>
-    <line x1="92" y1="116" x2="58" y2="60"/>
-    <line x1="58" y1="60" x2="34" y2="104"/>
-  </g>
-  <!-- node halos -->
-  <g fill="var(--paper)" stroke="none">
-    <circle cx="34" cy="104" r="12.5"/><circle cx="92" cy="116" r="11.5"/>
-    <circle cx="58" cy="60" r="6"/><circle cx="74" cy="84" r="5"/>
-    <circle cx="132" cy="96" r="5"/><circle cx="98" cy="40" r="5"/>
-  </g>
-  <!-- plain nodes -->
-  <g>
-    <circle cx="58" cy="60" r="4.5" fill="currentColor"/><circle cx="56.6" cy="58.6" r="1.3" fill="var(--paper)"/>
-    <circle cx="74" cy="84" r="3.2" fill="currentColor"/><circle cx="73" cy="83" r="1" fill="var(--paper)"/>
-    <circle cx="132" cy="96" r="3.2" fill="currentColor"/><circle cx="131" cy="95" r="1" fill="var(--paper)"/>
-    <circle cx="98" cy="40" r="3.2" fill="currentColor"/><circle cx="97" cy="39" r="1" fill="var(--paper)"/>
-  </g>
-  <!-- robot (front-left node) -->
-  <g stroke-width="1.3">
-    <rect x="26" y="97" width="16" height="14" rx="3"/>
-    <line x1="34" y1="97" x2="34" y2="92"/>
-    <circle cx="34" cy="91" r="1.3" fill="currentColor" stroke="none"/>
-    <circle cx="30.5" cy="103" r="1.2" fill="currentColor" stroke="none"/>
-    <circle cx="37.5" cy="103" r="1.2" fill="currentColor" stroke="none"/>
-    <line x1="30" y1="107.2" x2="38" y2="107.2"/>
-  </g>
-  <!-- virus (front-right node) -->
-  <g stroke-width="1.3">
-    <circle cx="92" cy="116" r="5.5" fill="var(--accent-tint)"/>
-    <g>
-      <line x1="98" y1="116" x2="101.5" y2="116"/><line x1="96.2" y1="120.2" x2="98.7" y2="122.7"/>
-      <line x1="92" y1="122" x2="92" y2="125.5"/><line x1="87.8" y1="120.2" x2="85.3" y2="122.7"/>
-      <line x1="86" y1="116" x2="82.5" y2="116"/><line x1="87.8" y1="111.8" x2="85.3" y2="109.3"/>
-      <line x1="92" y1="110" x2="92" y2="106.5"/><line x1="96.2" y1="111.8" x2="98.7" y2="109.3"/>
-    </g>
-    <g fill="currentColor" stroke="none">
-      <circle cx="101.5" cy="116" r="1"/><circle cx="98.7" cy="122.7" r="1"/><circle cx="92" cy="125.5" r="1"/><circle cx="85.3" cy="122.7" r="1"/>
-      <circle cx="82.5" cy="116" r="1"/><circle cx="85.3" cy="109.3" r="1"/><circle cx="92" cy="106.5" r="1"/><circle cx="98.7" cy="109.3" r="1"/>
-      <circle cx="90.4" cy="115" r="0.9"/><circle cx="93.2" cy="117.2" r="0.9"/>
-    </g>
-  </g>
-  <!-- drone in flight along the top edge -->
-  <g stroke-width="1.2">
-    <line x1="58" y1="60" x2="70" y2="54" opacity="0.5" stroke-dasharray="1.5 3"/>
-    <line x1="82" y1="48" x2="95.5" y2="41.5"/>
-    <path d="M95.5 41.5 L91.7 42 M95.5 41.5 L94.2 45"/>
-  </g>
-  <circle cx="76" cy="51" r="10.5" fill="var(--paper)" stroke="none"/>
-  <g stroke-width="1.3">
-    <line x1="76" y1="51" x2="68" y2="45"/><line x1="76" y1="51" x2="84" y2="45"/>
-    <line x1="76" y1="51" x2="68" y2="57"/><line x1="76" y1="51" x2="84" y2="57"/>
-    <circle cx="68" cy="45" r="2.4"/><circle cx="84" cy="45" r="2.4"/>
-    <circle cx="68" cy="57" r="2.4"/><circle cx="84" cy="57" r="2.4"/>
-    <circle cx="76" cy="51" r="2" fill="currentColor" stroke="none"/>
-  </g>
-</svg>
+        <img class="portrait" src="photo.jpg" alt="Saswata Jana">
+        <svg class="graph-glyph" viewBox="20 30 124 106" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <!-- back triangle edges -->
+          <g stroke-width="1" opacity="0.35">
+            <line x1="74" y1="84" x2="132" y2="96"/>
+            <line x1="132" y1="96" x2="98" y2="40"/>
+            <line x1="98" y1="40" x2="74" y2="84"/>
+          </g>
+          <!-- connector edges -->
+          <g stroke-width="1.1" opacity="0.5">
+            <line x1="34" y1="104" x2="74" y2="84"/>
+            <line x1="92" y1="116" x2="132" y2="96"/>
+          </g>
+          <!-- front triangle edges -->
+          <g stroke-width="1.3" opacity="0.72">
+            <line x1="34" y1="104" x2="92" y2="116"/>
+            <line x1="92" y1="116" x2="58" y2="60"/>
+            <line x1="58" y1="60" x2="34" y2="104"/>
+          </g>
+          <!-- node halos -->
+          <g fill="var(--paper)" stroke="none">
+            <circle cx="34" cy="104" r="12.5"/><circle cx="92" cy="116" r="11.5"/>
+            <circle cx="58" cy="60" r="6"/><circle cx="74" cy="84" r="5"/>
+            <circle cx="132" cy="96" r="5"/><circle cx="98" cy="40" r="5"/>
+          </g>
+          <!-- plain nodes -->
+          <g>
+            <circle cx="58" cy="60" r="4.5" fill="currentColor"/><circle cx="56.6" cy="58.6" r="1.3" fill="var(--paper)"/>
+            <circle cx="74" cy="84" r="3.2" fill="currentColor"/><circle cx="73" cy="83" r="1" fill="var(--paper)"/>
+            <circle cx="132" cy="96" r="3.2" fill="currentColor"/><circle cx="131" cy="95" r="1" fill="var(--paper)"/>
+            <circle cx="98" cy="40" r="3.2" fill="currentColor"/><circle cx="97" cy="39" r="1" fill="var(--paper)"/>
+          </g>
+          <!-- robot (front-left node) -->
+          <g stroke-width="1.3">
+            <rect x="26" y="97" width="16" height="14" rx="3"/>
+            <line x1="34" y1="97" x2="34" y2="92"/>
+            <circle cx="34" cy="91" r="1.3" fill="currentColor" stroke="none"/>
+            <circle cx="30.5" cy="103" r="1.2" fill="currentColor" stroke="none"/>
+            <circle cx="37.5" cy="103" r="1.2" fill="currentColor" stroke="none"/>
+            <line x1="30" y1="107.2" x2="38" y2="107.2"/>
+          </g>
+          <!-- virus (front-right node) -->
+          <g stroke-width="1.3">
+            <circle cx="92" cy="116" r="5.5" fill="var(--accent-tint)"/>
+            <g>
+              <line x1="98" y1="116" x2="101.5" y2="116"/><line x1="96.2" y1="120.2" x2="98.7" y2="122.7"/>
+              <line x1="92" y1="122" x2="92" y2="125.5"/><line x1="87.8" y1="120.2" x2="85.3" y2="122.7"/>
+              <line x1="86" y1="116" x2="82.5" y2="116"/><line x1="87.8" y1="111.8" x2="85.3" y2="109.3"/>
+              <line x1="92" y1="110" x2="92" y2="106.5"/><line x1="96.2" y1="111.8" x2="98.7" y2="109.3"/>
+            </g>
+            <g fill="currentColor" stroke="none">
+              <circle cx="101.5" cy="116" r="1"/><circle cx="98.7" cy="122.7" r="1"/><circle cx="92" cy="125.5" r="1"/><circle cx="85.3" cy="122.7" r="1"/>
+              <circle cx="82.5" cy="116" r="1"/><circle cx="85.3" cy="109.3" r="1"/><circle cx="92" cy="106.5" r="1"/><circle cx="98.7" cy="109.3" r="1"/>
+              <circle cx="90.4" cy="115" r="0.9"/><circle cx="93.2" cy="117.2" r="0.9"/>
+            </g>
+          </g>
+          <!-- drone in flight along the top edge -->
+          <g stroke-width="1.2">
+            <line x1="58" y1="60" x2="70" y2="54" opacity="0.5" stroke-dasharray="1.5 3"/>
+            <line x1="82" y1="48" x2="95.5" y2="41.5"/>
+            <path d="M95.5 41.5 L91.7 42 M95.5 41.5 L94.2 45"/>
+          </g>
+          <circle cx="76" cy="51" r="10.5" fill="var(--paper)" stroke="none"/>
+          <g stroke-width="1.3">
+            <line x1="76" y1="51" x2="68" y2="45"/><line x1="76" y1="51" x2="84" y2="45"/>
+            <line x1="76" y1="51" x2="68" y2="57"/><line x1="76" y1="51" x2="84" y2="57"/>
+            <circle cx="68" cy="45" r="2.4"/><circle cx="84" cy="45" r="2.4"/>
+            <circle cx="68" cy="57" r="2.4"/><circle cx="84" cy="57" r="2.4"/>
+            <circle cx="76" cy="51" r="2" fill="currentColor" stroke="none"/>
+          </g>
+        </svg>
       </div>
 
       <h1 class="name">Saswata Jana</h1>
       <p class="role"><strong>Prime Minister's Research Fellow</strong></p>
       <p class="role">Dept. of Mathematics, IIT Guwahati</p>
-      <p class="focus">Approximation &amp Distributed Algorithms: how agents move through graphs, and how drones can be scheduled for delivery.</p>
+      <p class="focus">Approximation and distributed algorithms — how agents move through graphs, and how drones can be scheduled for delivery.</p>
 
       <ul class="contacts">
         <li><span class="k">Email</span><a href="mailto:saswatajana@iitg.ac.in">saswatajana@iitg.ac.in</a></li>
@@ -337,12 +346,12 @@
     <section id="about">
       <h2>About</h2>
       <p class="lead">I am a Prime Minister's Research Fellow in the Department of Mathematics at IIT Guwahati, where I work with <a href="https://www.iitg.ac.in/psm/" target="_blank" rel="noopener">Prof. Partha Sarathi Mandal</a>.</p>
-      <p>I studied mathematics for my bachelor's and master's degrees, and during that time I grew interested in graph theory and the design of algorithms. My research now sits between these two areas: I work mostly on how mobile agents can coordinate as they move through a graph, and on how drones can be scheduled to deliver parcels. I submitted my PhD thesis ( <em>Miles to Walk Before Delivery: An Approximation</em> ) in July 2026.</p>
+      <p>I studied mathematics for my bachelor's and master's degrees, and during that time I grew interested in graph theory and the design of algorithms. My research now sits between these two areas: I work mostly on how mobile agents can coordinate as they move through a graph, and on how drones can be scheduled to deliver parcels. I submitted my PhD thesis, <em>Miles to Walk Before Delivery: An Approximation</em>, in July 2026.</p>
     </section>
 
     <section id="research">
       <h2>Research interests</h2>
-      <p>Much of my work is on <strong>distributed algorithms for mobile robots and agents</strong>. These are settings where a swarm of mobile agents, each with only a limited view of their surroundings, must work together toward a common goal without any central control. I have studied problems such as mutual visibility, where robots must place themselves so that no one blocks another's line of sight, along with gathering, partitioning a region, and covering the vertices of a graph. A theme that runs through this work is how the agents still succeed when their movements are inexact or when some of them fail.</p>
+      <p>Much of my work is on <strong>distributed algorithms for mobile robots and agents</strong>. These are settings where many simple agents, each with only a limited view of their surroundings, must work together toward a common goal without any central control. I have studied problems such as mutual visibility, where robots must place themselves so that no one blocks another's line of sight, along with gathering, partitioning a region, and covering the vertices of a graph. A theme that runs through this work is how the agents still succeed when their movements are inexact or when some of them fail.</p>
       <p>My other main line of work is on <strong>approximation and online algorithms for drone-assisted delivery</strong>. The question here is how to schedule a set of drones so that parcels are delivered quickly and within the energy each drone carries, often while a truck moves them part of the way. These problems are hard to solve exactly, so I design algorithms that come with a proven guarantee on how close their schedule is to the best one possible, including the harder case where delivery requests arrive one at a time and each choice is final.</p>
       <p>Both lines rest on a shared base in graph algorithms and combinatorial optimization. I am also interested in pursuit–evasion and graph protection games.</p>
       <ul class="themes">
