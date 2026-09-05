@@ -232,6 +232,24 @@
   .pub .authors,.pub-group h3{font-size:15.5px;}
   .entry .primary{font-size:17.5px;}
   .links li{font-size:17px;}
+    .profiles{
+    display:flex;flex-wrap:wrap;gap:8px;
+    margin:16px 0 24px;padding-top:18px;
+    border-top:1px solid var(--line);
+  }
+  .profiles .prof{
+    display:inline-flex;align-items:center;justify-content:center;
+    height:34px;min-width:40px;padding:0 12px;
+    border:1px solid var(--line);border-radius:8px;
+    color:var(--accent);font-weight:700;font-size:14px;
+    transition:background .15s ease,color .15s ease,border-color .15s ease;
+  }
+  .profiles .prof:hover{background:var(--accent);color:#fff;border-color:var(--accent);text-decoration:none;}
+  .profiles .prof svg{width:22px;height:22px;display:block;}
+    .deflist{list-style:none;margin:0 0 16px;padding:0;}
+  .deflist li{position:relative;padding-left:16px;margin-bottom:5px;color:var(--muted);}
+  .deflist li::before{content:"";position:absolute;left:0;top:11px;width:5px;height:5px;border-radius:50%;background:var(--accent);}
+  .deflist li span{color:var(--ink);font-weight:600;}
   /* ---------- Responsive ---------- */
   @media (max-width:860px){
     .wrap{grid-template-columns:1fr;gap:0;padding:0 26px;}
@@ -338,7 +356,16 @@
       <h1 class="name">Saswata Jana</h1>
       <p class="role"><strong>Prime Minister's Research Fellow</strong></p>
       <p class="role">Dept. of Mathematics, IIT Guwahati</p>
-     /* <p class="focus">Approximation &amp Distributed algorithms: How agents move through graphs and continuous domain to meet a collective goal, and how drones can be scheduled efficiently in last-mile delivery.</p>*/
+           <div class="profiles">
+        <a class="prof" href="https://scholar.google.com/citations?hl=en-US&user=7RNDm5cAAAAJ" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5 L21 9 L12 13 L3 9 Z"/><path d="M7 10.5 V14 c0 1.3 2.5 2.4 5 2.4 s5 -1.1 5 -2.4 V10.5"/><line x1="21" y1="9" x2="21" y2="13.5"/></svg>
+        </a>
+        <a class="prof" href="https://orcid.org/0000-0003-3238-8233" target="_blank" rel="noopener" title="ORCID" aria-label="ORCID">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><text x="12" y="12.4" text-anchor="middle" dominant-baseline="central" font-size="9" font-weight="700" fill="currentColor">iD</text></svg>
+        </a>
+        <a class="prof" href="https%3A%2F%2Fwww.researchgate.net%2Fprofile%2FSaswata-Jana&sa=D&sntz=1&usg=AOvVaw31SMwiRkRhZl3kHFMf4gkL" target="_blank" rel="noopener" title="ResearchGate" aria-label="ResearchGate">RG</a>
+        <a class="prof" href="https://dblp.org/pid/327/9139.html" target="_blank" rel="noopener" title="DBLP" aria-label="DBLP">dblp</a>
+      </div>
 
       <ul class="contacts">
         <li><span class="k">Email</span><a href="mailto:saswatajana@iitg.ac.in">saswatajana@iitg.ac.in</a></li>
@@ -369,9 +396,17 @@
 
     <section id="research">
       <h2><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="8" x2="16.5" y2="6"/><line x1="7" y1="8" x2="15" y2="17.5"/><line x1="16.5" y1="6" x2="15" y2="17.5"/><circle cx="7" cy="8" r="2.2" fill="var(--paper)"/><circle cx="16.5" cy="6" r="2.2" fill="var(--paper)"/><circle cx="15" cy="17.5" r="2.2" fill="var(--paper)"/></svg>Research interests</h2>
-      <p>Much of my work is on <strong>distributed algorithms for mobile robots and agents</strong>. These are settings where many simple agents, each with only a limited view of their surroundings, must work together toward a common goal without any central control. I have studied several such problems: <em>mutual visibility</em>, where the robots must place themselves so that no one blocks another's line of sight; <em>gathering</em>, where robots that start apart must all meet at a single point; <em>region partitioning</em>, where they split a shared area into equal parts among themselves; <em>vertex covering</em>, where they take up positions on a graph so that every edge has a robot at one end; and <em>separation</em>, where robots that share the same color must move apart from one another. A theme that runs through this work is how the agents still succeed when their movements are inexact or when some of them fail or when they activate with different schedulers.</p>
-      <p>My other main line of work is on <strong>approximation and online algorithms for drone-assisted delivery</strong>. The question here is how to schedule a set of drones so that parcels are delivered quickly and within the energy each drone carries, often while a truck moves them part of the way. These problems are hard to solve exactly, so I design algorithms that come with a proven guarantee on how close their schedule is to the best one possible, including the harder case where delivery requests arrive one at a time and each choice is final.</p>
-      <p>Both lines rest on a shared base in graph algorithms and combinatorial optimization. I am also interested in pursuit–evasion and graph protection games.</p>
+  <p>Much of my work is on <strong>distributed algorithms for mobile robots and agents</strong> — many simple agents, each seeing only part of their surroundings, coordinating toward a shared goal with no central control. Problems I've studied include:</p>
+<ul class="deflist">
+  <li><span>Mutual visibility</span> — no robot blocks another's line of sight.</li>
+  <li><span>Gathering</span> — robots that start apart all meet at one point.</li>
+  <li><span>Region partitioning</span> — robots split a shared area into equal parts.</li>
+  <li><span>Vertex covering</span> — robots occupy a graph so every edge has one at an end.</li>
+  <li><span>Separation</span> — robots of the same color move apart from one another.</li>
+</ul>
+<p>Across these, I study how the agents still succeed when their movements are imprecise, some of them fail, or they activate under different schedulers.</p> 
+<p>My other main line is on <strong>approximation and online algorithms for drone-assisted delivery</strong> — scheduling a set of drones to deliver parcels quickly and within the battery each one carries, often while a truck ferries them part of the way. Since these problems are hard to solve exactly, I design algorithms that come with a proven guarantee on how close their schedule is to the best possible, including the online case where requests arrive one at a time and every choice is final.</p>
+<p>Both lines rest on a shared base in graph algorithms and combinatorial optimization. I am also drawn to pursuit–evasion and graph protection games.</p>   
       <ul class="themes">
         <li>Approximation algorithms</li>
         <li>Distributed computing</li>
@@ -543,7 +578,7 @@
     </section>
 
     <section id="teaching">
-      <h2><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 L22 9 L12 14 L2 9 Z"/><path d="M6 11 v4 c0 1.7 2.7 3 6 3 s6 -1.3 6 -3 v-4"/><line x1="22" y1="9" x2="22" y2="14.5"/><circle cx="22" cy="15.2" r="0.9" fill="currentColor" stroke="none"/></svg>Education</h2>
+      <h2><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="11" rx="1.5"/><line x1="12" y1="15" x2="12" y2="20"/><line x1="8.5" y1="20" x2="15.5" y2="20"/><polyline points="8,11 11,8 14,10.5"/></svg>Teaching</h2>
 
       <div class="teach-block">
         <div class="head">Teaching Assistant — IIT Guwahati</div>
