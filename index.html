@@ -250,6 +250,9 @@
   .deflist li{position:relative;padding-left:16px;margin-bottom:5px;color:var(--muted);}
   .deflist li::before{content:"";position:absolute;left:0;top:11px;width:5px;height:5px;border-radius:50%;background:var(--accent);}
   .deflist li span{color:var(--ink);font-weight:600;}
+  .pub-group{counter-reset:pub;}
+  .pub .tag::before{counter-increment:pub;content:"[" counter(pub) "]";}
+  
   /* ---------- Responsive ---------- */
   @media (max-width:860px){
     .wrap{grid-template-columns:1fr;gap:0;padding:0 26px;}
@@ -424,7 +427,16 @@
         <h3>Refereed Journal Articles</h3>
 
         <div class="pub">
-          <div class="tag">J1</div>
+          <div class="tag"></div>
+          <div class="body">
+            <a class="title" href="https://www.sciencedirect.com/science/article/pii/S030439752600472X" target="_blank" rel="noopener">Separation of unconscious colored robots with obstructed visibility</a>
+            <div class="authors">Prajyot Pyati, <span class="me">Saswata Jana</span>, Adri Bhattacharya, Navjot Kaur, Partha Sarathi Mandal</div>
+            <div class="venue">Theoretical Computer Science (Elsevier), Vol. 1086, Oct 2026</div>
+          </div>
+        </div>
+
+        <div class="pub">
+          <div class="tag"></div>
           <div class="body">
             <a class="title" href="https://www.sciencedirect.com/science/article/pii/S0304397524005875" target="_blank" rel="noopener">Fault-tolerant mutual visibility without any axis agreement in presence of mobility failure</a>
             <div class="authors">Subhajit Pramanick, <span class="me">Saswata Jana</span>, Partha Sarathi Mandal</div>
@@ -433,7 +445,7 @@
         </div>
 
         <div class="pub">
-          <div class="tag">J2</div>
+          <div class="tag"></div>
           <div class="body">
             <a class="title" href="https://www.sciencedirect.com/science/article/pii/S0304397524003402" target="_blank" rel="noopener">Mutual visibility of luminous robots despite angular inaccuracy</a>
             <div class="authors">Subhajit Pramanick, <span class="me">Saswata Jana</span>, Adri Bhattacharya, Partha Sarathi Mandal</div>
@@ -442,7 +454,7 @@
         </div>
 
         <div class="pub">
-          <div class="tag">J3</div>
+          <div class="tag"></div>
           <div class="body">
             <a class="title" href="https://doi.org/10.1016/j.tcs.2024.114442" target="_blank" rel="noopener">Approximation algorithms for drone delivery scheduling with a fixed number of drones</a>
             <div class="authors"><span class="me">Saswata Jana</span>, Partha Sarathi Mandal</div>
@@ -540,34 +552,22 @@
         <h3>Under review / preprints</h3>
 
         <div class="pub">
-          <div class="tag">S1</div>
           <div class="body">
             <div class="title">Approximating the energy-constrained drone delivery packing problem for last-mile logistics</div>
             <div class="authors"><span class="me">Saswata Jana</span>, Partha Sarathi Mandal</div>
-            <div class="venue">Submitted to Discrete Mathematics</div>
+            <div class="venue">Submitted to Journal of Graph Algorithms and Applications</div>
           </div>
         </div>
 
         <div class="pub">
-          <div class="tag">S2</div>
           <div class="body">
             <a class="title" href="https://arxiv.org/abs/2509.10711" target="_blank" rel="noopener">Asynchronous gathering of opaque robots with mobility faults</a>
             <div class="authors">Subhajit Pramanick, <span class="me">Saswata Jana</span>, Gokarna Sharma, Partha Sarathi Mandal</div>
-            <div class="venue">Submitted to SSS 2026</div>
+            <div class="venue">Submitted to SPAA 2026</div>
           </div>
         </div>
 
         <div class="pub">
-          <div class="tag">S3</div>
-          <div class="body">
-            <div class="title">Separation of unconscious robots with obstructed visibility</div>
-            <div class="authors">Prajyot Pyati, Navjot Kaur, <span class="me">Saswata Jana</span>, Adri Bhattacharya, Partha Sarathi Mandal</div>
-            <div class="venue">Submitted to Theoretical Computer Science (Elsevier)</div>
-          </div>
-        </div>
-
-        <div class="pub">
-          <div class="tag">S4</div>
           <div class="body">
             <div class="title">Online drone scheduling for last-mile delivery</div>
             <div class="authors"><span class="me">Saswata Jana</span>, Giuseppe F. Italiano, Manas Jyoti Kashyop, Athanasios L. Konstantinidis, Evangelos Kosinas, Partha Sarathi Mandal</div>
@@ -606,7 +606,7 @@
       <h2><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 L22 9 L12 14 L2 9 Z"/><path d="M6 11 v4 c0 1.7 2.7 3 6 3 s6 -1.3 6 -3 v-4"/><line x1="22" y1="9" x2="22" y2="14.5"/><circle cx="22" cy="15.2" r="0.9" fill="currentColor" stroke="none"/></svg>Education</h2>
       <ul class="entries">
         <li class="entry">
-          <span class="primary">Ph.D. in Mathematics — IIT Guwahati<span class="sub">Advisor: Prof. Partha Sarathi Mandal. Thesis: <em>Miles to Walk Before Delivery: An Approximation</em> (submitted Jul 2026).</span></span>
+          <span class="primary">Ph.D. in Mathematics — IIT Guwahati<span class="sub">Advisor: Prof. Partha Sarathi Mandal. <br> Thesis: <em>Miles to Walk Before Delivery: An Approximation</em> (submitted Jul 2026).</span></span>
           <span class="when">2021 – present</span>
         </li>
         <li class="entry">
@@ -614,7 +614,7 @@
           <span class="when">2021 – present</span>
         </li>
         <li class="entry">
-          <span class="primary">B.Sc. (Hons.) in Mathematics — Asutosh College, University of Calcutta</span>
+          <span class="primary">B.Sc. (Hons.) in Mathematics — Asutosh College, University of Calcutta. <br> First class with a percentage 67.</span>
           <span class="when">2016 – 2019</span>
         </li>
       </ul>
